@@ -35,11 +35,16 @@ sizeBtn.addEventListener('click', (e) => {
         div.className = 'square';
         div.style.width = `${960 / size}px`;
         div.style.height = `${960 / size}px`;
+        div.addEventListener('mouseover', () => {
+          div.style.backgroundColor = `#${Math.floor(
+            Math.random() * 16777215
+          ).toString(16)}`;
+        });
         container.appendChild(div);
       }
     }
     squares.forEach((square) => {
-      square.style.backgroundColor = 'white';
+      square.style.backgroundColor = '';
     });
   } else {
     alert('Please enter a number between 1 and 100');
